@@ -4,6 +4,7 @@ import com.parsers.dto.SectionsDTO;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
@@ -67,9 +68,7 @@ public class Parser {
                         //get section content
                         Elements chapterContent = element.getElementsByClass("chunk-content");
                         if (chapterName != null) {
-                            for (Element historynote : chapterContent.select("p.historynote0")) {
-                                historynote.remove();
-                            }
+                            chapterContent.select("p.historynote0").forEach(Node::remove);
                             chapter.setContent(chapterContent.text());
                         }
                         pageDatas.add(chapter);
