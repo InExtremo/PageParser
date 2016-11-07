@@ -37,7 +37,7 @@ public class Parser {
 
         Elements chapters = doc.getElementsByClass("chunk");
         if (chapters != null) {
-            System.out.printf("Found %d chapters\n", chapters.size());
+            System.out.printf("Found %d chunks\n", chapters.size());
 
             if (!chapters.isEmpty()) {
                 Iterator<Element> it = chapters.iterator();
