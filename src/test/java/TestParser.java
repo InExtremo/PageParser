@@ -26,6 +26,9 @@ public class TestParser {
         html = getTextFromResource("Page.html");
     }
 
+    /**
+     * Should parse html and return specified number of sections.
+     */
     @Test
     public void shouldParseHTMLJsoup() {
         ArrayList<SectionsDTO> sectionsDTOs = Parser.parseHtml(html);

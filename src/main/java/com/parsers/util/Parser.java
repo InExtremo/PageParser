@@ -46,16 +46,9 @@ public class Parser {
                 while (it.hasNext()) {
                     element = it.next();
                     SectionsDTO chapter = new SectionsDTO();
-                    // System.out.println(element.toString());
-                    //System.out.println("value = " + element.text());
 
                     //get chunk type by dot counts 1 string after split = title, 2 = chapter, 4 = sections
                     String[] strings = element.id().split("\\.");
-//                    for (int i = 0; i < strings.length; i++) {
-//                        System.out.print(" Strings: " + strings[i]);
-//                    }
-//                    System.out.println();
-
                     //if chapter
                     if (strings.length == 2) {
                         Elements chapterName = element.getElementsByClass("chunk-title");
@@ -79,7 +72,6 @@ public class Parser {
                             }
                             chapter.setContent(chapterContent.text());
                         }
-                        // System.out.println(chapter);
                         pageDatas.add(chapter);
                     }
                 }
